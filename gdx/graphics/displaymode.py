@@ -1,0 +1,3 @@
+
+class DisplayMode:
+    pass

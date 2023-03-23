@@ -1,0 +1,3 @@
+
+class IAudio:
+    pass
