@@ -11,6 +11,7 @@ from gdx.graphics.glutils.glversion import GLVersion
 
 
 class IGraphics(ABC):
+
     # Returns whether OpenGLES 3.0 is available.
     # Ifit is you can get an instance of GL30 via GetGL30(self) to access
     # OpenGLES 3.0 functionality.Note that this functionality will

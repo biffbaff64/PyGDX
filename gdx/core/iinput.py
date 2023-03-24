@@ -2,6 +2,8 @@ import string
 from enum import Enum
 from abc import ABC, abstractmethod
 
+from gdx.core.iinput_processor import IInputProcessor
+
 
 # Interface to the input facilities.
 # This allows polling the state of the keyboard, the touch screen and
@@ -280,6 +282,43 @@ class IInput:
 
     # -------------------------------------------
     # Abstract methods for child classes
+    @abstractmethod
+    def is_touched(self):
+        pass
+
+    @abstractmethod
+    def just_touched(self):
+        pass
+
+    @abstractmethod
+    def is_button_pressed(self, key: int):
+        pass
+
+    @abstractmethod
+    def is_button_just_pressed(self, key: int):
+        pass
+
+    @abstractmethod
+    def is_key_pressed(self, key: int):
+        pass
+
+    @abstractmethod
+    def is_key_just_pressed(self, key: int):
+        pass
+
+    @abstractmethod
+    def get_text_input(self, listener: ITextInputListener, title: string, text: string, hint: string):
+        pass
+
+    @abstractmethod
+    def set_input_processor(self, processor: IInputProcessor):
+        pass
+
+    @abstractmethod
+    def get_input_processor(self) -> IInputProcessor:
+        pass
+
+    # -------------------------------------------
     @abstractmethod
     def get_accelerometer_x(self):
         pass

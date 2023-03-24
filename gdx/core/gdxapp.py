@@ -1,7 +1,7 @@
 from gdx.graphics.gl20 import GL20
 from gdx.graphics.gl30 import GL30
 from igraphics import IGraphics
-from application import Application
+from iapplication import IApplication
 from gdx.core.iaudio import IAudio
 from gdx.core.ifiles import IFiles
 from gdx.core.iinput import IInput
@@ -11,7 +11,7 @@ from gdx.core.iinput import IInput
 # Graphics, Audio, Files and Input instances.
 class Gdx:
     # @formatter:off
-    application     = Application()
+    application     = IApplication()
     graphics        = IGraphics()
     audio           = IAudio()
     input           = IInput()
