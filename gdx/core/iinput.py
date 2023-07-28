@@ -19,7 +19,7 @@ from gdx.core.iinput_processor import IInputProcessor
 # offers methods to use (and test for the presence of) other input systems
 # like vibration, compass, on-screen keyboards, and cursor capture.
 # Support for simple input dialogs is also provided.
-class IInput:
+class IInput(ABC):
     # -------------------------------------------
     # Mouse Buttons
     class Buttons:

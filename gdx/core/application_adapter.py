@@ -1,9 +1,11 @@
 from gdx.core.iapplication_listener import IApplicationListener
 
 
-# Convenience implementation of IApplicationListener.
-# Derive from this and only override what you need.
 class ApplicationAdapter(IApplicationListener):
+    """
+    Convenience implementation of IApplicationListener.
+    Derive from this and only override what you need.
+    """
 
     def create(self):
         pass

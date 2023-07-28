@@ -2,6 +2,10 @@ from gdx.core.iscreen import IScreen
 
 
 class ScreenAdapter(IScreen):
+    """
+    Convenience implementation of the iscreen interface.
+    Derive from this and implement only what you need.
+    """
 
     def show(self):
         pass
