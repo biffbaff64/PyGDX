@@ -14,6 +14,21 @@
 # limitations under the License.
 # ///////////////////////////////////////////////////////////////////////////////
 
+import string
+from typing import Generic, TypeVar
 
-class GLVersion:
-    pass
+from deletecandidates.FileInfo import FileInfo
+from gdx.assets.asset_loader_params import AssetLoaderParameters
+
+T = TypeVar('T')
+
+
+class AssetDescriptor(Generic[T]):
+    type: Generic[T] = None
+    file_path: string = ""
+    parameters: AssetLoaderParameters = None
+    file_info: FileInfo = None
+
+    @property
+    def to_string(self) -> string:
+        return "path: " + self.file_path + "type: " + self.type.full_name

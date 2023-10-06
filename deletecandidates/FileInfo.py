@@ -1,0 +1,2 @@
+class FileInfo:
+    pass

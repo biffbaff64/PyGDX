@@ -14,6 +14,10 @@
 # limitations under the License.
 # ///////////////////////////////////////////////////////////////////////////////
 
+import string
 
-class GLVersion:
-    pass
+
+class AssetManager:
+
+    def set_ref_count(self, fn: string, rc: int):
+        pass
