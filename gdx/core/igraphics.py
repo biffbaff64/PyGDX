@@ -18,8 +18,8 @@ from abc import ABC, abstractmethod
 
 from gdx.graphics.icursor import Cursor
 from gdx.graphics.displaymode import DisplayMode
-from gdx.graphics.gl20 import GL20
-from gdx.graphics.gl30 import GL30
+from gdx.graphics.igl20 import IGL20
+from gdx.graphics.igl30 import IGL30
 from gdx.graphics.monitor import Monitor
 from gdx.graphics.bufferformat import BufferFormat
 from gdx.graphics.graphicstype import GraphicsType
@@ -38,15 +38,15 @@ class IGraphics(ABC):
         pass
 
     @abstractmethod
-    def get_gl20(self) -> GL20:
-        pass
-
-    @abstractmethod
-    def get_gl30(self) -> GL30:
+    def get_gl20(self) -> IGL20:
         pass
 
     @abstractmethod
     def set_gl20(self, gl20):
+        pass
+
+    @abstractmethod
+    def get_gl30(self) -> IGL30:
         pass
 
     @abstractmethod

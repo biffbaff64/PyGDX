@@ -1,6 +1,6 @@
-- IP = In Progress
+- IP   = In Progress
 - - - - - - - - - -
-- DONE = Class finished but may not be fully 'CSharp-ified'
+- DONE = Class finished
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 - PRIORITY is 2D classes first
 - - - - - - - - - - - - - - - -
@@ -9,28 +9,28 @@
 
 CORE
 ----
-    - DONE - AbstractGraphics
-    - DONE - AbstractInput
-    - DONE - ApplicationAdapter
-    - DONE - Game
-    - DONE - GdxApp
-    - DONE - IApplication
-    - DONE - IApplicationListener
-    - DONE - IApplicationLogger
-    - DONE - IAudio
-    - DONE - IFile
-    - DONE - IGraphics
-    - DONE - IInput
-    - DONE - IInputProcessor
-    - DONE - ILifecycleListener
-    - IP   - INet
-    - DONE - InputAdapter
-    - IP   - InputEventQueue
-    - IP   - InputMultiplexor
-    - DONE - IPreferences
-    - DONE - IScreen
-    - DONE - ScreenAdapter
-    - DONE - Version
+    -      - AbstractGraphics
+    -      - AbstractInput
+    -      - ApplicationAdapter
+    -      - Game
+    -      - GdxApp
+    -      - IApplication
+    -      - IApplicationListener
+    -      - IApplicationLogger
+    -      - IAudio
+    -      - IFile
+    -      - IGraphics
+    -      - IInput
+    -      - IInputProcessor
+    -      - ILifecycleListener
+    -      - INet
+    -      - InputAdapter
+    -      - InputEventQueue
+    -      - InputMultiplexor
+    -      - IPreferences
+    -      - IScreen
+    -      - ScreenAdapter
+    -      - Version
 
 ASSETS
 ------
@@ -72,34 +72,34 @@ ASSETS/LOADERS/RESOLVERS
 
 AUDIO
 -----
-    - IP   - IAudioDevice
-    - IP   - IAudioRecorder
-    - IP   - IMusic
-    - IP   - ISound
+    -      - IAudioDevice
+    -      - IAudioRecorder
+    -      - IMusic
+    -      - ISound
 
 FILES
 -----
-    - IP   - FileHandle
+    -      - FileHandle
     -      - FileHandleStream
 
 GRAPHICS
 --------
-    - IP   - BufferFormat
+    -      - BufferFormat
     -      - Camera
     -      - Color
     -      - Colors
     -      - Cubemap
-    - IP   - DisplayMode
+    -      - DisplayMode
     -      - FPSLogger
     -      - GLTexture
-    - IP   - GraphicsType
+    -      - GraphicsType
     -      - ICubemapData
-    - IP   - ICursor
-    - IP   - IGL20
-    - IP   - IGL30
+    -      - ICursor
+    -      - IGL20
+    -      - IGL30
     -      - ITextureData
     -      - Mesh
-    - IP   - Monitor
+    -      - Monitor
     -      - OrthographicCamera
     -      - PerspectiveCamera
     -      - Pixmap
@@ -156,7 +156,7 @@ GRAPHICS/GLUTILS
     -      - FrameBufferCubemap
     -      - GLFrameBuffer
     -      - GLOnlyTextureData
-    - IP   - GLVersion
+    -      - GLVersion
     -      - HdpiMode
     -      - HdpiUtils
     -      - ImmediateModeRenderer
@@ -509,7 +509,7 @@ UTILS/COLLECTIONS
     -      - PredicateIterable
     -      - PredicateIterator
     -      - ShortArray
-    - IP   - SnapshotArray
+    -      - SnapshotArray
 
 UTILS/COMPRESSION
 -----------------
