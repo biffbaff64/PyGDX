@@ -15,7 +15,24 @@
 # ///////////////////////////////////////////////////////////////////////////////
 
 from abc import ABC, abstractmethod
+from enum import Enum
 
 
 class INet(ABC):
+
+    class IHttpResponse(ABC):
+        pass
+
+    class IHttpMethods(ABC):
+        pass
+
+    class IHttpResponseListener(ABC):
+        pass
+
+    class Protocol(Enum):
+        pass
+
+    class HttpRequest(ABC):
+        pass
+
     pass

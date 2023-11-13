@@ -14,6 +14,7 @@
 # limitations under the License.
 # ///////////////////////////////////////////////////////////////////////////////
 
+
 from gdx.core.iinput_processor import IInputProcessor
 from gdx.utils.collections.snapshot_array import SnapshotArray
 

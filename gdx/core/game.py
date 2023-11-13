@@ -16,7 +16,7 @@
 
 from gdx.core.iapplication_listener import IApplicationListener
 from gdx.core.iscreen import IScreen
-from gdxapp import Gdx
+from gdx.core.gdxapp import Gdx
 
 
 # AnApplicationListener that delegates to a Screen. This allows an application

@@ -36,3 +36,6 @@ class Gdx:
     gl20            = IGL20()
     gl30            = IGL30()
     # @formatter:on
+
+    is_dev_mode: bool
+    is_god_mode: bool

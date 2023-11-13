@@ -13,13 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ///////////////////////////////////////////////////////////////////////////////
+import struct
 
 from gdx.core import iinput_processor
 
 
 class InputEventQueue:
 
-    Key: int = 1
+    Skip: int = -1
     Key_Down: int = 0
     Key_Up: int = 1
     Key_Typed: int = 2
@@ -41,6 +42,54 @@ class InputEventQueue:
         self._processing_queue.append(processor)
         self._queue.clear()
 
-        q = list_to_array(self._processing_queue)
+        # Assuming q is a list representing the processing queue
+        for i in range(0, len(self._processing_queue), 3):
+            event_type = self._processing_queue[i]
+            _current_event_time = (self._processing_queue[i + 1] << 32) | (self._processing_queue[i + 2] & 0xFFFFFFFF)
 
-        for x in self._processing_queue:
+            if event_type == self.Skip:
+                i += self._processing_queue[i]
+
+            elif event_type == self.Key_Down:
+                processor.key_down(self._processing_queue[i + 1])
+
+            elif event_type == self.Key_Up:
+                processor.key_up(self._processing_queue[i + 1])
+
+            elif event_type == self.Key_Typed:
+                processor.key_typed(chr(self._processing_queue[i + 1]))
+
+            elif event_type == self.Touch_Down:
+                processor.touch_down(self._processing_queue[i + 1], self._processing_queue[i + 2],
+                                     self._processing_queue[i + 3], self._processing_queue[i + 4])
+
+            elif event_type == self.Touch_Up:
+                processor.touch_up(self._processing_queue[i + 1], self._processing_queue[i + 2],
+                                   self._processing_queue[i + 3], self._processing_queue[i + 4])
+
+            elif event_type == self.Touch_Dragged:
+                processor.touch_dragged(self._processing_queue[i + 1], self._processing_queue[i + 2],
+                                        self._processing_queue[i + 3])
+
+            elif event_type == self.Mouse_Moved:
+                processor.mouse_moved(self._processing_queue[i + 1], self._processing_queue[i + 2])
+
+            elif event_type == self.Mouse_Scrolled:
+                processor.scrolled(
+                    struct.unpack('f', struct.pack('I', self._processing_queue[i + 1]))[0],
+                    struct.unpack('f', struct.pack('I', self._processing_queue[i + 2]))[0]
+                    )
+
+            else:
+                raise Exception("Invalid event type")
+
+    def next(self, next_type: int, i: int) -> int:
+
+        for n in range(0, len(self._processing_queue), 3):
+            type = self._processing_queue[i]
+
+            if type == next_type:
+                return i
+
+
+        pass

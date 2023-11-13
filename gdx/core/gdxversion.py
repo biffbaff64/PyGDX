@@ -17,7 +17,7 @@
 import string
 
 
-class Version:
+class GdxVersion:
     version_string: string = "0.0.1"
 
     major: int = 0
@@ -41,11 +41,11 @@ class Version:
 
     @staticmethod
     def is_higher(self, major: int, minor: int, revision: int):
-        return Version.is_higher_equal(self, major, minor, revision + 1)
+        return self.is_higher_equal(self, major, minor, revision + 1)
 
     @staticmethod
     def is_lower(self, major: int, minor: int, revision: int):
-        return Version.is_lower_equal(self, major, minor, revision - 1)
+        return self.is_lower_equal(self, major, minor, revision - 1)
 
     @staticmethod
     def is_higher_equal(self, major: int, minor: int, revision: int):
