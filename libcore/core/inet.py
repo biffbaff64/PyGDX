@@ -13,26 +13,50 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ///////////////////////////////////////////////////////////////////////////////
-
+import string
 from abc import ABC, abstractmethod
 from enum import Enum
 
 
-class INet(ABC):
+class INet( ABC ):
 
-    class IHttpResponse(ABC):
+    class IHttpResponse( ABC ):
+
+        @abstractmethod
+        def get_result( self ) -> [ ]:
+            pass
+
+        @abstractmethod
+        def get_result_as_string( self ) -> string:
+            pass
+
+        @abstractmethod
+        def get_result_as_stream( self ) -> StreamReader:
+            pass
+
+        @abstractmethod
+        def get_status( self ) -> HttpStatus:
+            pass
+
+        @abstractmethod
+        def get_header( self ) -> string:
+            pass
+
+        @abstractmethod
+        def get_headers( self ) -> dict:
+            pass
+
+        Dictionary < string, List < string > > GetHeaders();
         pass
 
-    class IHttpMethods(ABC):
+    class IHttpMethods( ABC ):
         pass
 
-    class IHttpResponseListener(ABC):
+    class IHttpResponseListener( ABC ):
         pass
 
-    class Protocol(Enum):
+    class Protocol( Enum ):
         pass
 
-    class HttpRequest(ABC):
+    class HttpRequest( ABC ):
         pass
-
-    pass

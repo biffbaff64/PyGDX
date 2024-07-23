@@ -51,14 +51,18 @@ class GdxVersion:
     def is_higher_equal(self, major: int, minor: int, revision: int):
         if self.major != major:
             return self.major > major
+
         if self.minor != minor:
             return self.minor > minor
+
         return self.revision >= revision
 
     @staticmethod
     def is_lower_equal(self, major: int, minor: int, revision: int):
         if self.major != major:
             return self.major < major
+
         if self.minor != minor:
             return self.minor < minor
+
         return self.revision <= revision

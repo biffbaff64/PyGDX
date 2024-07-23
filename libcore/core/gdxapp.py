@@ -23,9 +23,11 @@ from gdx.core.ifiles import IFiles
 from gdx.core.iinput import IInput
 
 
-# Environment class holding references to the Application,
-# Graphics, Audio, Files and Input instances.
 class Gdx:
+    """
+    Environment class holding references to the Application,
+    Graphics, Audio, Files and Input instances.
+    """
     # @formatter:off
     application     = IApplication()
     graphics        = IGraphics()
@@ -37,5 +39,15 @@ class Gdx:
     gl30            = IGL30()
     # @formatter:on
 
+    # Test mode flag which, when TRUE, means that all developer options are enabled.
+    # This must, however, mean that software with this enabled cannot be published.
     is_dev_mode: bool
+
+    # From Wiktionary...
+    # "1. (video games) A game mode where the player character is invulnerable to
+    # damage, typically activated by entering a cheat code."
+    # "2. (video games) A mode of play in (mostly) roguelike games, allowing the
+    # player to create objects on demand, to be resurrected in the case of death, etc."
+    # Note: Only the flag is provided by this library. It is intended for use in your
+    # local game code.
     is_god_mode: bool

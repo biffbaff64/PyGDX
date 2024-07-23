@@ -18,7 +18,7 @@ from abc import abstractmethod
 import string
 from typing import Generic, TypeVar
 
-from gdx.assets.asset_manager import AssetManager
+from libcore.assets.asset_manager import AssetManager
 
 T = TypeVar('T')
 

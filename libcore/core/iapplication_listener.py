@@ -15,58 +15,32 @@
 # ///////////////////////////////////////////////////////////////////////////////
 
 from abc import ABC, abstractmethod
-from enum import Enum
-from gdx.core.ipreferences import IPreferences
-import string
 
 
-class IApplication(ABC):
-    #
-    class ApplicationType(Enum):
-        DesktopGL = 1
-        WebGL = 2
-
-    # Log levels
-    LogNone: int = 0
-    LogInfo: int = 1
-    LogDebug: int = 2
-    LogError: int = 3
-
-    LogLevel: int = LogNone
-    IsRunning: bool = False
+class IApplicationListener(ABC):
 
     @abstractmethod
-    def log(self, message: string):
+    def create(self):
         pass
 
+    # Called when the application should render itself
     @abstractmethod
-    def error(self, message: string):
+    def render(self, delta_time: float):
         pass
 
+    # Called when the application is resized.
     @abstractmethod
-    def debug(self, message: string):
+    def resize(self, width: int, height: int):
         pass
 
+    # Called when the application is paused, usually
+    # when losing focus
     @abstractmethod
-    def get_application_type(self) -> ApplicationType:
+    def pause(self):
         pass
 
+    # Called when the application is resumed from a paused
+    # state, usually when regaining focus
     @abstractmethod
-    def get_preferences(self) -> IPreferences:
-        pass
-
-    @abstractmethod
-    def get_version(self) -> int:
-        pass
-
-    @abstractmethod
-    def add_lifecycle_listener(self, listener):
-        pass
-
-    @abstractmethod
-    def remove_lifecycle_listener(self, listener):
-        pass
-
-    @abstractmethod
-    def exit(self):
+    def resume(self):
         pass

@@ -21,7 +21,7 @@ from gdx.core.iinput import IInput
 from gdx.core.iinput_processor import IInputProcessor
 
 
-class AbstractInput(IInput):
+class AbstractInput(ABC, IInput):
     #
     pressed_keys: [IInput.Keys.MaxKeycode + 1]
     just_pressed_keys: [IInput.Keys.MaxKeycode + 1]
@@ -41,8 +41,10 @@ class AbstractInput(IInput):
         """
         if key == IInput.Keys.Any_Key:
             return self.pressed_keys_count > 0
+
         if key < 0 or key > IInput.Keys.MaxKeycode:
             return False
+
         return self.pressed_keys[key]
 
     # -------------------------------------------------------------------------
@@ -52,8 +54,10 @@ class AbstractInput(IInput):
         """
         if key == IInput.Keys.Any_Key:
             return self.key_just_pressed
+
         if key < 0 or key > IInput.Keys.MaxKeycode:
             return False
+
         return self.just_pressed_keys[key]
 
     # -------------------------------------------------------------------------
@@ -181,4 +185,4 @@ class AbstractInput(IInput):
     def is_button_just_pressed(self, key: int):
         pass
 
-    # -----------------------------------------------------
+    # -------------------------------------------------------------------------

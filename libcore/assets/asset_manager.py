@@ -16,14 +16,33 @@
 
 import string
 
-from gdx.assets.loaders.bitmap_font_loader import BitmapFontLoader
-from gdx.assets.loaders.resolvers.absolute_file_handle_resolver import AbsoluteFileHandleResolver
-from gdx.assets.loaders.resolvers.ifile_handle_resolver import IFileHandleResolver
-from gdx.graphics.g2d.bitmap_font import BitmapFont
-from gdx.utils.Logger import Logger
+from typing import Type, TypeVar, Any
 
+from libcore.assets.loaders.bitmap_font_loader import BitmapFontLoader
+from libcore.assets.loaders.resolvers.absolute_file_handle_resolver import AbsoluteFileHandleResolver
+from libcore.assets.loaders.resolvers.ifile_handle_resolver import IFileHandleResolver
+from libcore.graphics.g2d.bitmap_font import BitmapFont
+from libcore.utils.Logger import Logger
+
+T = TypeVar('T')
 
 class AssetManager:
+
+    _asset_dependencies: dict
+    _assets: dict
+    _asset_types: dict
+    _injected: []
+    _loaders: dict
+    _load_queue: []
+    _task_stack: []
+
+    _exector: AsyncExecutor
+    _listener: IAssetErrorListener
+    _file_handle_resolver: IFileHandleResolver
+
+    _loaded: int
+    _peak_tasks: int
+    _to_load: int
 
     logger: Logger
 
@@ -48,6 +67,15 @@ class AssetManager:
             self.set_loader(Skin, SkinLoader(resolver))
             self.set_loader(ParticleEffect, ParticleEffectLoader(resolver))
 
+    def get(self, name: string, type: Type[T]) -> T:
+        """
+        Retrieves an asset of the specified type by its name.
+        :param name: The name of the asset.
+        :param type: The type of the asset.
+        :return: The required asset.
+        """
+        pass
+
     def set_loader(self, typ, loader):
         pass
 
@@ -58,4 +86,14 @@ class AssetManager:
         :param rc:
         :return:
         """
+        pass
+
+    @property
+    def loaded_assets_count(self):
+        """
+        :return: The number of currently loaded assets.
+        """
+        return len(self._asset_types)
+
+    def clear(self):
         pass

@@ -91,5 +91,4 @@ class InputEventQueue:
             if type == next_type:
                 return i
 
-
         pass

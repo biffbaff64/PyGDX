@@ -17,13 +17,16 @@
 from gdx.core.iapplication_listener import IApplicationListener
 from gdx.core.iscreen import IScreen
 from gdx.core.gdxapp import Gdx
+from gdx.utils.idisposable import IDisposable
 
 
-# AnApplicationListener that delegates to a Screen. This allows an application
-# to easily have multiple screens. Screens are not disposed automatically. You
-# must handle whether you want to keep screens around or dispose of them when
-# another screen is set.
-class Game(IApplicationListener):
+class Game(IApplicationListener, IDisposable):
+    """
+    An ApplicationListener that delegates to a Screen. This allows an application
+    to easily have multiple screens. Screens are not disposed automatically. You
+    must handle whether you want to keep screens around or dispose of them when
+    another screen is set.
+    """
     screen = IScreen()
 
     # ---------------------------------
@@ -31,9 +34,11 @@ class Game(IApplicationListener):
         return self.screen
 
     # ---------------------------------
-    # Sets the current screen.Screen.hide() is called on any old screen,
-    # and Screen.show() is called on the new screen, if any.
     def set_screen(self, _screen: IScreen):
+        """
+        Sets the current screen. screen.hide() is called on any old screen,
+        and screen.show() is called on the new screen, if any.
+        """
 
         if self.screen is not None:
             self.screen.hide()
