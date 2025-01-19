@@ -26,6 +26,7 @@ from libcore.utils.Logger import Logger
 
 T = TypeVar('T')
 
+
 class AssetManager:
 
     _asset_dependencies: dict

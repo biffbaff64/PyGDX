@@ -1044,11 +1044,11 @@ SCENES/SCENE2D/UTILS
 UTILS
 -----
 
-    -      - Align                          
-    -      - BinaryHeap
-    -      - Bits                           
-    -      - Character
-    -      - ComparableTimSort              
+    - DONE - Align                          
+    - IP   - BinaryHeap
+    - IP   - Bits                           
+    - IP   - Character
+    - IP   - ComparableTimSort              
     -      - DataInput                      Check
     -      - DataOutput                     Check
     -      - DataUtils                      Added Class
@@ -1072,7 +1072,6 @@ UTILS
     -      - Timer                          
     -      - TimeUtils
     -      - TimSort
-    -      - Trace                          Addition
 
     - The following do not need converting
 
@@ -1186,13 +1185,13 @@ UTILS/POOLING
 UTILS/VIEWPORT
 --------------
 
-    -      - ExtendedViewport               
-    -      - FillViewport                   
-    -      - FitViewport                    
-    -      - ScalingViewport                
-    -      - ScreenViewport                 
-    -      - StretchViewport                
-    -      - Viewport                       
+    - IP   - ExtendedViewport               
+    - IP   - FillViewport                   
+    - IP   - FitViewport                    
+    - IP   - ScalingViewport                
+    - IP   - ScreenViewport                 
+    - IP   - StretchViewport                
+    - IP   - Viewport                       
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1200,11 +1199,9 @@ UTILS/VIEWPORT
 UTILS/XML
 ---------
 
-    - TODO: Switch to System.Xml
-
-    -      - XmlReader          Some 'unreachable code' fixes needed
-    -      - XmlReaderData
-    -      - XmlWriter
+    - IP   - XmlReader
+    - IP   - XmlReaderData
+    - IP   - XmlWriter
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

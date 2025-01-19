@@ -14,10 +14,6 @@
 # limitations under the License.
 # ///////////////////////////////////////////////////////////////////////////////
 
-from abc import ABC
-
-from libcore.core.igraphics import IGraphics
-
-class AbstractGraphics( IGraphics, ABC ):
+class XmlWriter:
     pass
 

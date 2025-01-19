@@ -13,9 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ///////////////////////////////////////////////////////////////////////////////
+import string
 
 
 class Align:
+    """
+    Provides bit flag constants for alignment
+    """
     CENTER = 1 << 0
     TOP = 1 << 1
     BOTTOM = 1 << 2
@@ -28,14 +32,51 @@ class Align:
     BOTTOM_RIGHT = BOTTOM | RIGHT
 
     def is_left(self, align: int):
+        """
+        Returns TRUE if the supplied position is aligned to the LEFT.
+        :param align: The sample alignment to check
+        :return: boolean
+        """
         return align & self.LEFT
 
     def is_right(self, align: int):
+        """
+        Returns TRUE if the supplied position is aligned to the RIGHT.
+        :param align: The sample alignment to check
+        :return: boolean
+        """
         return align & self.RIGHT
 
     def is_top(self, align: int):
+        """
+        Returns TRUE if the supplied position is aligned to the TOP.
+        :param align: The sample alignment to check
+        :return: boolean
+        """
         return align & self.TOP
 
     def is_bottom(self, align: int):
+        """
+        Returns TRUE if the supplied position is aligned to the BOTTOM.
+        :param align: The sample alignment to check
+        :return: boolean
+        """
         return align & self.BOTTOM
 
+    def to_string(self, position: int):
+        """
+        Returns a string that represents the provided alignment.
+        """
+        s = "Alignment "
+
+        if position & self.TOP:
+            s.join(":[TOP]")
+
+        if position & self.BOTTOM:
+            s.join(":[BOTTOM]")
+
+        if position & self.LEFT:
+            s.join(":[LEFT]")
+
+        if position & self.RIGHT:
+            s.join(":[RIGHT]")
